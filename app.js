@@ -5,7 +5,7 @@ const { connect, connection: db } = require("mongoose");
 const error = require("./middlewares/error");
 
 const opt = { useNewUrlParser: true, useUnifiedTopology: true };
-connect("mongodb://localhost/foodStore", opt);
+connect(process.env.MONGO_URI, opt);
 
 const app = express();
 
